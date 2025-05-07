@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hugaub2te-nodejs-gitops
+  description: This is GitOps manifest for hugaub2te-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=hugaub2te-nodejs
+    backstage.io/kubernetes-id: hugaub2te-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hugaub2te-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hugaub2te-nodejs
